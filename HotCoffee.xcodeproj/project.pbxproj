@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		11AC680226B2325A00E65101 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AC680126B2325A00E65101 /* AppDelegate.swift */; };
 		11AC680426B2325A00E65101 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AC680326B2325A00E65101 /* SceneDelegate.swift */; };
-		11AC680626B2325A00E65101 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AC680526B2325A00E65101 /* ViewController.swift */; };
 		11AC680926B2325A00E65101 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11AC680726B2325A00E65101 /* Main.storyboard */; };
 		11AC680B26B2325B00E65101 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11AC680A26B2325B00E65101 /* Assets.xcassets */; };
 		11AC680E26B2325B00E65101 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11AC680C26B2325B00E65101 /* LaunchScreen.storyboard */; };
@@ -19,7 +18,6 @@
 		11AC67FE26B2325A00E65101 /* HotCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11AC680126B2325A00E65101 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11AC680326B2325A00E65101 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		11AC680526B2325A00E65101 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		11AC680826B2325A00E65101 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11AC680A26B2325B00E65101 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11AC680D26B2325B00E65101 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,15 +54,22 @@
 		11AC680026B2325A00E65101 /* HotCoffee */ = {
 			isa = PBXGroup;
 			children = (
+				11B1B7A926B233AE0026AF68 /* Controllers */,
 				11AC680126B2325A00E65101 /* AppDelegate.swift */,
 				11AC680326B2325A00E65101 /* SceneDelegate.swift */,
-				11AC680526B2325A00E65101 /* ViewController.swift */,
 				11AC680726B2325A00E65101 /* Main.storyboard */,
 				11AC680A26B2325B00E65101 /* Assets.xcassets */,
 				11AC680C26B2325B00E65101 /* LaunchScreen.storyboard */,
 				11AC680F26B2325B00E65101 /* Info.plist */,
 			);
 			path = HotCoffee;
+			sourceTree = "<group>";
+		};
+		11B1B7A926B233AE0026AF68 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +142,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11AC680626B2325A00E65101 /* ViewController.swift in Sources */,
 				11AC680226B2325A00E65101 /* AppDelegate.swift in Sources */,
 				11AC680426B2325A00E65101 /* SceneDelegate.swift in Sources */,
 			);
