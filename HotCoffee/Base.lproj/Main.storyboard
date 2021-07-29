@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,7 +11,7 @@
         <!--Orders-->
         <scene sceneID="sUl-7R-7FL">
             <objects>
-                <tableViewController id="00R-4E-VWW" sceneMemberID="viewController">
+                <tableViewController id="00R-4E-VWW" customClass="OrdersTableViewContoller" customModule="HotCoffee" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Kj3-We-Tb4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,12 +32,77 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Orders" id="j6j-OB-W59">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="dXg-yy-ihU"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="dXg-yy-ihU">
+                            <connections>
+                                <segue destination="N96-8G-Pcy" kind="presentation" id="XZF-fh-Ow5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pbs-hu-ad2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="910.14492753623199" y="163.39285714285714"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="Lev-lq-57z">
+            <objects>
+                <viewController id="gSU-jD-wFo" customClass="AddOrderViewController" customModule="HotCoffee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l9K-od-2ZX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cyi-H9-VOG">
+                                <rect key="frame" x="0.0" y="56" width="414" height="376"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0lN-va-3ur">
+                                <rect key="frame" x="107" y="563" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="VTo-S9-GyN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xxE-SZ-L7d">
+                                <rect key="frame" x="107" y="633" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="9l3-9k-Pni"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9Bf-4F-NaV">
+                                <rect key="frame" x="104" y="452" width="206" height="32"/>
+                                <segments>
+                                    <segment title="Small"/>
+                                    <segment title="Medium"/>
+                                    <segment title="Large"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="129-R6-Fn9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xxE-SZ-L7d" firstAttribute="centerX" secondItem="l9K-od-2ZX" secondAttribute="centerX" id="4bG-Vd-4Na"/>
+                            <constraint firstItem="0lN-va-3ur" firstAttribute="centerX" secondItem="l9K-od-2ZX" secondAttribute="centerX" id="9Ol-aN-X7w"/>
+                            <constraint firstItem="cyi-H9-VOG" firstAttribute="height" secondItem="129-R6-Fn9" secondAttribute="height" multiplier="0.5" id="BZi-UQ-1Gi"/>
+                            <constraint firstItem="cyi-H9-VOG" firstAttribute="width" secondItem="129-R6-Fn9" secondAttribute="width" id="ESV-id-bUv"/>
+                            <constraint firstItem="cyi-H9-VOG" firstAttribute="leading" secondItem="129-R6-Fn9" secondAttribute="leading" id="GSc-Da-uvj"/>
+                            <constraint firstItem="9Bf-4F-NaV" firstAttribute="centerX" secondItem="l9K-od-2ZX" secondAttribute="centerX" id="HwW-M7-YYq"/>
+                            <constraint firstItem="0lN-va-3ur" firstAttribute="top" secondItem="9Bf-4F-NaV" secondAttribute="bottom" constant="80" id="M25-XE-vyR"/>
+                            <constraint firstItem="9Bf-4F-NaV" firstAttribute="top" secondItem="cyi-H9-VOG" secondAttribute="bottom" constant="20" id="YIt-OE-BIP"/>
+                            <constraint firstItem="xxE-SZ-L7d" firstAttribute="top" secondItem="0lN-va-3ur" secondAttribute="bottom" constant="36" id="hL8-A3-LxY"/>
+                            <constraint firstItem="cyi-H9-VOG" firstAttribute="top" secondItem="129-R6-Fn9" secondAttribute="top" id="yqt-ZU-NV6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="rMq-8R-LpA">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="lU6-Dq-6bo"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="dkq-Eb-OYO"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aPq-cE-LMX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2634.7826086956525" y="162.72321428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wXX-Gq-011">
@@ -55,6 +121,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Xh-XU-UDS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="163.39285714285714"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iRr-uN-DCN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N96-8G-Pcy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="p9M-M6-utO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mNd-ZH-S2W">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gSU-jD-wFo" kind="relationship" relationship="rootViewController" id="oSA-mC-FhR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kEz-Vt-ldY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1724.6376811594205" y="162.72321428571428"/>
         </scene>
     </scenes>
     <resources>

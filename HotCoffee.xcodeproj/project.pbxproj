@@ -12,6 +12,8 @@
 		11AC680926B2325A00E65101 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11AC680726B2325A00E65101 /* Main.storyboard */; };
 		11AC680B26B2325B00E65101 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11AC680A26B2325B00E65101 /* Assets.xcassets */; };
 		11AC680E26B2325B00E65101 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11AC680C26B2325B00E65101 /* LaunchScreen.storyboard */; };
+		11B1B7AB26B2350D0026AF68 /* OrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B1B7AA26B2350D0026AF68 /* OrdersTableViewController.swift */; };
+		11B1B7AD26B235B70026AF68 /* AddOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B1B7AC26B235B70026AF68 /* AddOrderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		11AC680A26B2325B00E65101 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11AC680D26B2325B00E65101 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11AC680F26B2325B00E65101 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11B1B7AA26B2350D0026AF68 /* OrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewController.swift; sourceTree = "<group>"; };
+		11B1B7AC26B235B70026AF68 /* AddOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,8 @@
 		11B1B7A926B233AE0026AF68 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				11B1B7AA26B2350D0026AF68 /* OrdersTableViewController.swift */,
+				11B1B7AC26B235B70026AF68 /* AddOrderViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -144,6 +150,8 @@
 			files = (
 				11AC680226B2325A00E65101 /* AppDelegate.swift in Sources */,
 				11AC680426B2325A00E65101 /* SceneDelegate.swift in Sources */,
+				11B1B7AB26B2350D0026AF68 /* OrdersTableViewController.swift in Sources */,
+				11B1B7AD26B235B70026AF68 /* AddOrderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
