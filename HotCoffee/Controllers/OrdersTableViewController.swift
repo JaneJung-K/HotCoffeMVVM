@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class OrdersTableViewContoller: UITableViewController {
+class OrdersTableViewContoller: UITableViewController, AddCoffeeOrderDelegate {
     
     var orderListViewModel = OrderListViewModel()
     
@@ -17,28 +17,49 @@ class OrdersTableViewContoller: UITableViewController {
         populateOrders()
     }
     
+    //delegate functions of AddCoffeeOrderDelegate
+    
+    func addCoffeeOrderViewControllerDidClose(controller: UIViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func addCoffeeOrderViewControllerDidSave(order: Order, controller: UIViewController) {
+        
+        controller.dismiss(animated: true, completion: nil)
+        
+        let orderVM = OrderViewModel(order: order)
+        self.orderListViewModel.ordersViewModel.append(orderVM)
+        self.tableView.insertRows(at: [IndexPath.init(row: self.orderListViewModel.ordersViewModel.count - 1, section: 0)], with: .automatic)
+        
+    }
+    
     private func populateOrders() {
         
-        guard let coffeeOrdersURL = URL(string: "https://island-bramble.glitch.me/orders") else {
-            fatalError("URL was incorrect")
-        }
         
-        //제너릭 타입을 여기에서 정의해준다
-        let resource = Resource<[Order]>(url: coffeeOrdersURL)
-        
-        Webservice().load(resource: resource, completion: {result in
+        Webservice().load(resource: Order.all) { [weak self] result in
             
             switch result {
             case .success(let orders):
                 print(orders)
-                self.orderListViewModel.ordersViewModel = orders.map(OrderViewModel.init)
-                self.tableView.reloadData()
+                self?.orderListViewModel.ordersViewModel = orders.map(OrderViewModel.init)
+                self?.tableView.reloadData()
             case .failure(let error):
                 print(error)
             }
             
             }
-        )
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let navC = segue.destination as? UINavigationController,
+              let addCoffeeOrderVC = navC.viewControllers.first as? AddOrderViewController
+        else {
+            fatalError("Error performing segue!")
+        }
+        
+        addCoffeeOrderVC.delegate = self
         
     }
     
@@ -63,3 +84,5 @@ class OrdersTableViewContoller: UITableViewController {
     }
     
 }
+
+

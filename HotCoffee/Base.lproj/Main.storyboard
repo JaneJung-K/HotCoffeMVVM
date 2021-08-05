@@ -126,7 +126,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="rMq-8R-LpA">
-                        <barButtonItem key="leftBarButtonItem" title="Close" id="lU6-Dq-6bo"/>
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="lU6-Dq-6bo">
+                            <connections>
+                                <action selector="close" destination="gSU-jD-wFo" id="WuH-9a-7Ls"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="dkq-Eb-OYO">
                             <connections>
                                 <action selector="save" destination="gSU-jD-wFo" id="ZKU-PO-jyE"/>
