@@ -30,7 +30,9 @@ class Webservice {
                 return
             }
             
+            // 빈 배열이 들어왔다. try?를 try!로 바꿔서 왜 데이터가 안 들어오는지 확인하자
             let result = try? JSONDecoder().decode(T.self, from: data)
+
             if let result = result {
                 DispatchQueue.main.async {
                     completion(.success(result))
