@@ -30,6 +30,7 @@ class OrdersTableViewContoller: UITableViewController {
             
             switch result {
             case .success(let orders):
+                print(orders)
                 self.orderListViewModel.ordersViewModel = orders.map(OrderViewModel.init)
                 self.tableView.reloadData()
             case .failure(let error):

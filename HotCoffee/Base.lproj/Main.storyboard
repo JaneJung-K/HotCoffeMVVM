@@ -70,6 +70,20 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cyi-H9-VOG">
                                 <rect key="frame" x="0.0" y="56" width="414" height="376"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CoffeeTypeTableCiewCell" id="alY-ob-G4e">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="alY-ob-G4e" id="ijM-aC-ppb">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="gSU-jD-wFo" id="lvY-Kq-vU2"/>
+                                    <outlet property="delegate" destination="gSU-jD-wFo" id="Yib-b0-R4n"/>
+                                </connections>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0lN-va-3ur">
                                 <rect key="frame" x="107" y="563" width="200" height="34"/>
@@ -113,10 +127,16 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="rMq-8R-LpA">
                         <barButtonItem key="leftBarButtonItem" title="Close" id="lU6-Dq-6bo"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="dkq-Eb-OYO"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="dkq-Eb-OYO">
+                            <connections>
+                                <action selector="save" destination="gSU-jD-wFo" id="ZKU-PO-jyE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="nameTextField" destination="0lN-va-3ur" id="23S-dl-u8P"/>
                         <outlet property="tableView" destination="cyi-H9-VOG" id="AVu-0i-AEE"/>
+                        <outlet property="totalTextField" destination="xxE-SZ-L7d" id="iAv-kN-PsE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aPq-cE-LMX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
